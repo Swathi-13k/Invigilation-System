@@ -4,6 +4,8 @@ A Django-based web application designed to simplify and manage examination invig
 
 > **Academic Project** — Developed/adapted for learning and academic purposes.
 
+---
+
 ## 📌 Project Overview
 
 Managing examination invigilation manually can be time-consuming and may lead to scheduling conflicts, uneven workload distribution, and communication delays.
@@ -21,6 +23,8 @@ The **Invigilation Management System** provides a centralized solution for:
 
 The system provides separate interfaces and workflows for **Administrators** and **Faculty**.
 
+---
+
 ## 🎯 Objectives
 
 * Reduce manual effort involved in assigning invigilation duties.
@@ -29,6 +33,8 @@ The system provides separate interfaces and workflows for **Administrators** and
 * Provide faculty with clear visibility of their assigned duties.
 * Improve communication through notifications and reminders.
 * Maintain records of important system activities.
+
+---
 
 ## ✨ Features
 
@@ -58,6 +64,8 @@ The system provides separate interfaces and workflows for **Administrators** and
 * View notifications
 * View personal workload information
 
+---
+
 ## 🧠 Smart Invigilation Allocation
 
 The system supports intelligent allocation of faculty members by considering factors such as:
@@ -70,6 +78,8 @@ The system supports intelligent allocation of faculty members by considering fac
 * Examination schedule
 
 Cross-department allocation can also be used to reduce potential assignment bias.
+
+---
 
 ## 🔄 Main Workflow
 
@@ -93,6 +103,8 @@ Track Allocation & Workload
 Generate Reports
 ```
 
+---
+
 ## 🛠️ Technology Stack
 
 | Category           | Technology                       |
@@ -105,7 +117,7 @@ Generate Reports
 | Email              | SMTP / Django Email Backend      |
 | Version Control    | Git & GitHub                     |
 
-
+---
 
 ## 📂 Project Structure
 
@@ -131,6 +143,8 @@ Invigilation-System/
 ├── .gitignore                # Git ignored files
 └── README.md                 # Project documentation
 ```
+
+---
 
 ## ⚙️ Installation & Setup
 
@@ -223,6 +237,8 @@ The application uses Django's built-in security mechanisms and includes features
 
 Sensitive configuration values should be stored in `.env` and should **not** be committed to GitHub.
 
+---
+
 ## 📊 Reports & Analytics
 
 The system provides reporting functionality for monitoring:
@@ -235,6 +251,8 @@ The system provides reporting functionality for monitoring:
 
 These reports help administrators monitor examination-related activities more efficiently.
 
+---
+
 ## 📱 Responsive Interface
 
 The application uses a responsive web interface designed to work across:
@@ -243,6 +261,8 @@ The application uses a responsive web interface designed to work across:
 * Laptops
 * Tablets
 * Mobile devices
+
+---
 
 ## 🎓 Academic Context
 
@@ -257,6 +277,8 @@ This project is suitable for educational institutions that need to manage:
 * Invigilation duties
 * Leave requests
 
+---
+
 ## 👩‍💻 Project Contribution
 
 This repository contains an adapted academic version of an existing invigilation-management project.
@@ -264,6 +286,8 @@ This repository contains an adapted academic version of an existing invigilation
 My work on this repository focuses on understanding, configuring, testing, documenting, and extending the application as part of my academic/project learning.
 
 Specific contributions should be described based on the features actually implemented or modified.
+
+---
 
 ## 📚 Learning Outcomes
 
@@ -281,6 +305,8 @@ Through this project, the following concepts can be practiced:
 * Web application testing
 * Software documentation
 
+---
+
 ## 🚀 Future Enhancements
 
 Possible future improvements include:
@@ -294,11 +320,15 @@ Possible future improvements include:
 * Additional notification channels
 * Role-specific access controls
 
+---
+
 ## 📌 Project Status
 
 **Status:** Academic / Development Project
 
 The application is intended for learning, demonstration, and academic project purposes. Further testing and configuration are required before considering deployment in a real institutional environment.
+
+---
 
 ## 📄 License
 
