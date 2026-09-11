@@ -1,214 +1,305 @@
 # Invigilation Management System
 
-A comprehensive Django-based web application for managing exam invigilation duties in educational institutions.
+A Django-based web application designed to simplify and manage examination invigilation activities in educational institutions. The system helps administrators manage faculty, exams, timetables, invigilation assignments, leaves, notifications, and reports through a centralized platform.
 
-## 🚀 Features
+> **Academic Project** — Developed/adapted for learning and academic purposes.
 
-### For Administrators
-- **Faculty Management**: Create and manage faculty profiles with batch operations
-- **Exam Management**: Schedule exams with automated course selection
-- **Smart Allocation**: Intelligent faculty assignment with bias prevention
-- **Comprehensive Reports**: Analytics dashboard with workload distribution
-- **Timetable Management**: Admin interface to manage any faculty's timetable
-- **Notification System**: Automated reminders and status updates
+## 📌 Project Overview
 
-### For Faculty
-- **Personal Dashboard**: View assignments and notifications
-- **Interactive Timetable**: Grid-based timetable management
-- **Leave Management**: Apply for and track leave requests
-- **Assignment Response**: Accept or decline invigilation duties
-- **Workload Visibility**: View personal workload statistics
+Managing examination invigilation manually can be time-consuming and may lead to scheduling conflicts, uneven workload distribution, and communication delays.
 
-## 🏗️ System Architecture
+The **Invigilation Management System** provides a centralized solution for:
 
-### Core Applications
-- **accounts**: User management and authentication
-- **exams**: Exam scheduling and invigilation management
-- **timetable**: Faculty timetable management
-- **leaves**: Leave application and approval system
-- **notifications**: Real-time notification system
-- **logs**: Comprehensive audit logging
+* Faculty management
+* Exam scheduling
+* Invigilation allocation
+* Faculty timetable management
+* Leave management
+* Notifications
+* Workload monitoring
+* Reports and analytics
 
-### Key Features
-- **Cross-Department Allocation**: Prevents bias by avoiding same-department assignments
-- **Smart Scheduling**: Considers faculty availability and teaching schedules
-- **Automated Workflows**: Email notifications and reminder systems
-- **Comprehensive Logging**: Full audit trail for all actions
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
+The system provides separate interfaces and workflows for **Administrators** and **Faculty**.
+
+## 🎯 Objectives
+
+* Reduce manual effort involved in assigning invigilation duties.
+* Avoid assigning faculty to duties that conflict with their timetable or leave.
+* Support cross-department invigilation allocation.
+* Provide faculty with clear visibility of their assigned duties.
+* Improve communication through notifications and reminders.
+* Maintain records of important system activities.
+
+## ✨ Features
+
+### 👨‍💼 Administrator
+
+* Faculty profile management
+* Batch faculty creation
+* Exam creation and scheduling
+* Exam hall management
+* Invigilation allocation
+* Allocation suggestions
+* Faculty timetable management
+* Leave request management
+* Notifications and reminders
+* Workload reports
+* Department statistics
+* Audit/action logs
+
+### 👩‍🏫 Faculty
+
+* Personal dashboard
+* View invigilation assignments
+* Accept or decline assignments
+* View timetable
+* Apply for leave
+* Track leave requests
+* View notifications
+* View personal workload information
+
+## 🧠 Smart Invigilation Allocation
+
+The system supports intelligent allocation of faculty members by considering factors such as:
+
+* Faculty availability
+* Teaching timetable
+* Leave status
+* Department
+* Previous workload
+* Examination schedule
+
+Cross-department allocation can also be used to reduce potential assignment bias.
+
+## 🔄 Main Workflow
+
+```text
+Create Exam
+     ↓
+Configure Exam Halls
+     ↓
+Check Faculty Availability
+     ↓
+Generate Allocation Suggestions
+     ↓
+Assign Invigilators
+     ↓
+Notify Faculty
+     ↓
+Faculty Accepts / Declines
+     ↓
+Track Allocation & Workload
+     ↓
+Generate Reports
+```
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Django 4.2.23, Python 3.x
-- **Database**: SQLite (development), PostgreSQL (production ready)
-- **Frontend**: Bootstrap 5, JavaScript, Chart.js
-- **Email**: Django email backend with SMTP support
-- **Authentication**: Django's built-in auth with OTP verification
+| Category           | Technology                       |
+| ------------------ | -------------------------------- |
+| Backend            | Python, Django                   |
+| Frontend           | HTML, CSS, Bootstrap, JavaScript |
+| Database           | SQLite                           |
+| Charts & Analytics | Chart.js                         |
+| Authentication     | Django Authentication            |
+| Email              | SMTP / Django Email Backend      |
+| Version Control    | Git & GitHub                     |
 
-## 📋 Quick Start
 
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
-- Git
 
-### Installation
+## 📂 Project Structure
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd invigilation-system
-   ```
-
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure environment**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your settings
-   ```
-
-5. **Run migrations**
-   ```bash
-   python manage.py migrate
-   ```
-
-6. **Create superuser**
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-7. **Start development server**
-   ```bash
-   python manage.py runserver
-   ```
-
-8. **Access the application**
-   - Open http://127.0.0.1:8000 in your browser
-   - Login with your superuser credentials
-
-## 📖 Documentation
-
-Comprehensive documentation is available in the `docs/` folder:
-
-- **[Quick Reference Card](docs/QUICK_REFERENCE_CARD.md)** - Essential commands and URLs
-- **[Setup Guide](docs/SETUP_GUIDE.md)** - Detailed installation instructions
-- **[System Architecture](docs/SYSTEM_ARCHITECTURE.md)** - Technical overview
-- **[Complete Implementation Summary](docs/COMPLETE_IMPLEMENTATION_SUMMARY.md)** - Full feature list
-
-## 🔧 Configuration
-
-### Environment Variables (.env)
-```env
-SECRET_KEY=your-secret-key-here
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-
-# Email Configuration
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=your-email@gmail.com
-EMAIL_HOST_PASSWORD=your-app-password
+```text
+Invigilation-System/
+│
+├── accounts/                 # User and faculty management
+├── exams/                    # Exam and invigilation management
+├── leaves/                   # Leave management
+├── notifications/            # Notification functionality
+├── timetable/                # Faculty timetable management
+├── invigilation_system/      # Main Django project configuration
+│
+├── templates/                # HTML templates
+├── TIME TABLES/              # Department timetable files
+├── Requirements and execution/
+│   ├── EXECUTION_PROCESS.txt
+│   └── SOFTWARE_REQUIREMENTS.txt
+│
+├── manage.py                 # Django management script
+├── requirements.txt          # Python dependencies
+├── .env.example              # Environment variable template
+├── .gitignore                # Git ignored files
+└── README.md                 # Project documentation
 ```
 
-### Key Settings
-- **Time Zones**: Configured for Indian Standard Time (IST)
-- **Email Backend**: SMTP with Gmail support
-- **Static Files**: Configured for development and production
-- **Database**: SQLite for development, easily configurable for PostgreSQL
+## ⚙️ Installation & Setup
 
-## 🎯 Key Workflows
+### 1. Clone the Repository
 
-### Exam Allocation Process
-1. **Create Exams**: Batch creation with department/year/semester selection
-2. **Smart Assignment**: System suggests optimal faculty allocation
-3. **Bias Prevention**: Prioritizes cross-department faculty assignment
-4. **Notification**: Automated emails to assigned faculty
-5. **Response Tracking**: Faculty can accept/decline with reasons
-6. **Analytics**: Comprehensive reports on allocation success
+```bash
+git clone https://github.com/Swathi-13k/Invigilation-System.git
+cd Invigilation-System
+```
 
-### Faculty Management
-1. **Batch Creation**: Create multiple faculty profiles simultaneously
-2. **Credential Distribution**: Automated email with login credentials
-3. **First Login Flow**: OTP verification and password change
-4. **Timetable Management**: Both self-service and admin interfaces
-5. **Leave Integration**: Leave status affects availability for duties
+### 2. Create a Virtual Environment
 
-## 📊 Analytics & Reports
+#### Windows
 
-- **Summary Dashboard**: Key metrics and trends
-- **Faculty Workload**: Individual and comparative analysis
-- **Department Statistics**: Cross-department performance
-- **Allocation Success**: Bias prevention effectiveness
-- **Response Rates**: Faculty engagement metrics
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-## 🔐 Security Features
+#### Linux / macOS
 
-- **OTP Verification**: Two-factor authentication for first login
-- **Password Policies**: Enforced password changes
-- **Audit Logging**: Complete action history with IP tracking
-- **Role-Based Access**: Separate admin and faculty interfaces
-- **CSRF Protection**: Built-in Django security features
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-## 🚀 Production Deployment
+### 3. Install Dependencies
 
-### Checklist
-- [ ] Set `DEBUG=False` in production
-- [ ] Configure `ALLOWED_HOSTS`
-- [ ] Use PostgreSQL database
-- [ ] Set up SSL certificate
-- [ ] Configure email with app passwords
-- [ ] Set up automated backups
-- [ ] Configure web server (nginx/Apache)
-- [ ] Set up process manager (gunicorn/uwsgi)
+```bash
+pip install -r requirements.txt
+```
 
-### Recommended Stack
-- **Web Server**: Nginx
-- **WSGI Server**: Gunicorn
-- **Database**: PostgreSQL
-- **Caching**: Redis (optional)
-- **Monitoring**: Django logging + external monitoring
+### 4. Configure Environment Variables
 
-## 🤝 Contributing
+Create a `.env` file based on `.env.example`.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Example:
 
-## 📝 License
+```env
+SECRET_KEY=your-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+If email functionality is required, configure the required SMTP settings in the environment file.
 
-## 🆘 Support
+> **Note:** Never upload real passwords, API keys, email passwords, or other secret credentials to GitHub.
 
-For support and questions:
-1. Check the documentation in `docs/`
-2. Review the troubleshooting section in the Quick Reference Card
-3. Open an issue on GitHub
-4. Contact the development team
+### 5. Apply Database Migrations
 
-## 🎓 Educational Context
+```bash
+python manage.py migrate
+```
 
-This system is designed for B.Tech colleges with:
-- **4-year program structure**
-- **Multiple departments** (CSE, ECE, EEE, MECH, CIVIL, etc.)
-- **Semester-based courses**
-- **Regular examination schedules**
-- **Faculty workload management needs**
+### 6. Create an Admin Account
+
+```bash
+python manage.py createsuperuser
+```
+
+Follow the instructions shown in the terminal.
+
+### 7. Start the Development Server
+
+```bash
+python manage.py runserver
+```
+
+### 8. Open the Application
+
+Open the following address in your browser:
+
+```text
+http://127.0.0.1:8000/
+```
 
 ---
 
-**Version**: 1.0  
-**Status**: Production Ready ✅  
-**Last Updated**: March 2026
+## 🔐 Security
+
+The application uses Django's built-in security mechanisms and includes features such as:
+
+* User authentication
+* Role-based access
+* Password management
+* OTP verification workflows
+* CSRF protection
+* Audit logging
+* Environment-based configuration
+
+Sensitive configuration values should be stored in `.env` and should **not** be committed to GitHub.
+
+## 📊 Reports & Analytics
+
+The system provides reporting functionality for monitoring:
+
+* Faculty workload
+* Department statistics
+* Invigilation allocation
+* Assignment responses
+* Allocation activity
+
+These reports help administrators monitor examination-related activities more efficiently.
+
+## 📱 Responsive Interface
+
+The application uses a responsive web interface designed to work across:
+
+* Desktop computers
+* Laptops
+* Tablets
+* Mobile devices
+
+## 🎓 Academic Context
+
+This project is suitable for educational institutions that need to manage:
+
+* Multiple departments
+* Faculty members
+* Semester-based courses
+* Examination schedules
+* Examination halls
+* Faculty availability
+* Invigilation duties
+* Leave requests
+
+## 👩‍💻 Project Contribution
+
+This repository contains an adapted academic version of an existing invigilation-management project.
+
+My work on this repository focuses on understanding, configuring, testing, documenting, and extending the application as part of my academic/project learning.
+
+Specific contributions should be described based on the features actually implemented or modified.
+
+## 📚 Learning Outcomes
+
+Through this project, the following concepts can be practiced:
+
+* Django web application development
+* Python programming
+* Database management
+* CRUD operations
+* Authentication and authorization
+* HTML/CSS/Bootstrap
+* JavaScript
+* Git and GitHub
+* Project configuration
+* Web application testing
+* Software documentation
+
+## 🚀 Future Enhancements
+
+Possible future improvements include:
+
+* Cloud deployment
+* PostgreSQL database integration
+* Advanced allocation optimization
+* Mobile application support
+* Improved analytics dashboards
+* Automated conflict detection
+* Additional notification channels
+* Role-specific access controls
+
+## 📌 Project Status
+
+**Status:** Academic / Development Project
+
+The application is intended for learning, demonstration, and academic project purposes. Further testing and configuration are required before considering deployment in a real institutional environment.
+
+## 📄 License
+
+This repository does not currently include a separate license file. Usage and redistribution should follow the permissions and attribution requirements of the original project and its contributors.
